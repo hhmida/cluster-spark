@@ -57,7 +57,7 @@ docker exec -it -u hadoop nodemaster bash
 cd /opt/spark-apps
 hadoop fs -put shakespeare.txt
 ```
-- Access to jupyeter url in browser and open `wordcount.ipynb`. URL can be displayed using this command
+- Access to jupyter url in browser and open `wordcount.ipynb`. URL can be displayed using this command
 
 ```bash
 ./cluster.sh info
