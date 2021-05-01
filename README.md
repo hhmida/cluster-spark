@@ -8,7 +8,7 @@ Create a 3 node Spark cluster over Hadoop. Including jupyter as default driver f
 1. Clone the repository
 
 ```bash 
-git clone https://github.com/hhmida/gp-spark
+git clone https://github.com/hhmida/cluster-spark
 ```
 
 2. Create the first docker image scalabase
