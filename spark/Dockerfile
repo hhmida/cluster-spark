@@ -26,7 +26,7 @@ RUN mkdir -p /home/hadoop/.ssh /home/hadoop/hadoop/logs \
     /home/hadoop/data/nameNode /home/hadoop/data/dataNode \
     /home/hadoop/data/namesecondary /home/hadoop/data/tmp && \
     touch /home/hadoop/hadoop/logs/fairscheduler-statedump.log
-
+RUN pip3 install pyspark==2.4.0
 # We don't care about the skeleton rc files, so overwrite
 COPY config/shellrc /home/hadoop/.bashrc
 COPY config/shellrc /home/hadoop/.profile
@@ -44,6 +44,7 @@ RUN cat /home/hadoop/hadoop-env.sh >> /home/hadoop/hadoop/etc/hadoop/hadoop-env.
 
 USER root
 RUN chown -R hadoop /home/hadoop/.ssh /home/hadoop/.bashrc /home/hadoop/.profile \
-    /home/hadoop/data /home/hadoop/hadoop-env.sh
+    /home/hadoop/data /home/hadoop/hadoop-env.sh /home/hadoop/sparkcmd.sh
+RUN chmod a+x /home/hadoop/sparkcmd.sh
 #ENTRYPOINT ["/home/hadoop/sparkcmd.sh","start"]
 CMD service ssh start && sleep infinity
