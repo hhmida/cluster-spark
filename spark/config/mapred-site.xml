@@ -10,7 +10,7 @@
     <name>mapreduce.job.tracker</name>
     <value>nodemaster:9001</value>
   </property>    
-  <property>
+  <!--property>
           <name>yarn.nodemanager.resource.memory-mb</name>
           <value>1536</value>
   </property>
@@ -25,5 +25,5 @@
   <property>
           <name>yarn.nodemanager.vmem-check-enabled</name>
           <value>false</value>
-  </property>                                                                                                                              
+  </property-->                                                                                                                              
 </configuration>

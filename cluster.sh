@@ -51,7 +51,7 @@ if [[ $1 = "deploy" ]]; then
 
   # 3 nodes
   echo ">> Starting nodes master and worker nodes ..."
-  docker run -dP --network sparknet --name nodemaster -h nodemaster -v `pwd`/spark-apps:/opt/spark-apps -it sparkbase
+  docker run -d -p 8081:8081 -p 8080:8080 -p 8088:8088 -p 7077:7077 -p 9870:9870 -p 4040:4040 -p 8888:8888 --network sparknet --name nodemaster -h nodemaster -v `pwd`/spark-apps:/opt/spark-apps -it sparkbase
   docker run -dP --network sparknet --name node2 -it -h node2 -v `pwd`/spark-apps:/opt/spark-apps sparkbase
   docker run -dP --network sparknet --name node3 -it -h node3 -v `pwd`/spark-apps:/opt/spark-apps sparkbase
 

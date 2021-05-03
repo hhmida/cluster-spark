@@ -8,6 +8,7 @@ EXPOSE 8088
 EXPOSE 7077
 EXPOSE 9870
 EXPOSE 4040
+EXPOSE 8888
 
 RUN useradd -m -s /bin/bash hadoop
 
