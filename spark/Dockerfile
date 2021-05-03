@@ -11,7 +11,8 @@ EXPOSE 4040
 EXPOSE 8888
 
 RUN useradd -m -s /bin/bash hadoop
-
+RUN mv /usr/bin/python /usr/bin/python_old
+RUN cp /usr/bin/python3 /usr/bin/python
 WORKDIR /home/hadoop
 
 USER hadoop
