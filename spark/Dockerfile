@@ -18,11 +18,13 @@ WORKDIR /home/hadoop
 USER hadoop
 RUN  wget https://archive.apache.org/dist/hadoop/core/hadoop-3.2.0/hadoop-3.2.0.tar.gz
 RUN  wget https://archive.apache.org/dist/spark/spark-2.4.0/spark-2.4.0-bin-without-hadoop.tgz
-
+RUN wget https://archive.apache.org/dist/kafka/0.10.2.2/kafka_2.12-0.10.2.2.tgz 
 RUN tar -zxf hadoop-3.2.0.tar.gz && \
     mv hadoop-3.2.0 hadoop && \
     tar -zxf spark-2.4.0-bin-without-hadoop.tgz && \
-    mv spark-2.4.0-bin-without-hadoop spark &&  rm *gz
+    mv spark-2.4.0-bin-without-hadoop spark 
+RUN tar -zxf kafka_2.12-0.10.2.2.tgz && \
+    mv kafka_2.12-0.10.2.2 kafka && rm *gz
 
 RUN mkdir -p /home/hadoop/.ssh /home/hadoop/hadoop/logs \
     /home/hadoop/data/nameNode /home/hadoop/data/dataNode \

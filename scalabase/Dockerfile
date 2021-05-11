@@ -7,7 +7,7 @@ EXPOSE 22/tcp
 EXPOSE 22/udp
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends openssh-server wget python3 python3-pip python3-setuptools
+    apt-get install -y --no-install-recommends openssh-server wget vim python3 python3-pip python3-setuptools
 
 WORKDIR /tmp
 RUN pip3 install wheel 
